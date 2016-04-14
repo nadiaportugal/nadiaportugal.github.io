@@ -1,0 +1,47 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: #EFE8E2;
+}
+
+.splash-row {
+	height: 100%;	
+	background-image: url(images/splash-screen.jpg);
+	background-size: cover;
+}
+
+.splash-col {
+	height: 100%;
+}
+
+.splash-col .jumbotron {
+	background-color: rgba(8, 8, 8, 0.3);
+	color: #fff;
+	border-radius: 0;
+	text-align: center;
+    margin: 10% 10%;
+}
+
+.splash-col .jumbotron .btn {
+	font-size: 1.2em;
+	text-decoration: none;
+	color: #fff;
+}
+
+.splash-col .jumbotron .btn:hover {
+	color: #e5e5e5;
+}
+
+.greetings {
+	height: 100%;
+	padding-top: 15px;
+}
+
+.greetings .panel .panel-heading {
+    background-color: #BC4226;
+    border-color: #BC4226;
+    color: #fff;
+    font-weight: bold;
+}
