@@ -35,10 +35,26 @@
 		</div>
 		<div class="col-md-4">
 			<div class="panel panel-default">
-				<div class="panel-heading">Nombre</div>
+				<div class="panel-heading">Galu</div>
 				<div class="panel-body">
-					<p>Felicidades!</p>
+					<p>Feliz mudanza santa!!!</p>
+					<p>Como regalo te hice un puzzle:</p>
+					<p>(Fallar tiene consecuencias)</p>
+					<div>
+						<p>Cuanto es 2 + 2?</p>
+						<input id="resultado">
+						<!--Yeay!! sabia que ibas a ver el codigo!!-->
+						<!--Estaba bien tu primer respuesta (si es que pusiste 4), sino me cagaste-->
+						<!--Feliz mudanza :)-->
+						<button id="boton">Enter!</button>
+						<button id="katamary">Modo Katamary!</button>
+						<p id="mensaje"></p>
+						<img id="imagen" src="" alt="dale que tiene solucion en serio" style="max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px); background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0;"/>
+					</div>
+					
 				</div>
+				
+				
 			</div>
 		</div>
 		<div class="col-md-4">
@@ -71,5 +87,83 @@
 			});
 		})();
 	</script>
+	
+	
+	<script>
+	
+	$(document).ready(function(){
+	
+		
+		<!--Yeay!! sabia que ibas a ver el codigo!!-->
+		<!--Estaba bien tu primer respuesta (si es que pusiste 4), sino me cagaste-->
+		<!--Feliz mudanza :)-->
+	
+		var items = [
+			'Dale, enserio pensabas que iba a ser tan facil?'
+			, 'http://45.media.tumblr.com/6cc62dba50dfe9741889f490e72237c4/tumblr_n3que10p4o1qk08n1o5_250.gif'
+			, 'Nop, proba de nuevo'
+			, 'http://i118.photobucket.com/albums/o106/Yukira_Azumi/Tumblr/tumblr_mdk430JMXf1qltqg1.gif'
+			, 'No, de nuevo (tiene solucion en serio esto ;) )'
+			, 'https://media.giphy.com/media/gX0wdXBYL8Ius/giphy.gif'
+			, 'Que poco te esmeras'
+			, 'https://media.giphy.com/media/nu6XLY6QHeUk8/giphy.gif'
+			, 'Segui y vas a romper todo'
+			, 'https://media.giphy.com/media/fDO2Nk0ImzvvW/giphy.gif'
+			, 'https://media.giphy.com/media/q85HM9TcDkc12/giphy.gif'
+			, 'https://media.giphy.com/media/l2JIlgyj62mtU8pz2/giphy.gif'
+			, 'https://media.giphy.com/media/BIT7g4LfGfxLi/giphy.gif'
+			, 'https://media2.giphy.com/media/oWmEVnmwwqL0k/200.gif'
+			, 'https://media0.giphy.com/media/9wBub5vhSsTDi/200.gif'
+			, 'https://media0.giphy.com/media/Z3bhpcoNdnDig/200.gif'
+			, 'https://media1.giphy.com/media/b4pPnoO1QDd1C/200.gif'
+			, 'https://media1.giphy.com/media/tInuiWy5wTxq8/200.gif'
+			, '']
+		var input = $("#resultado");
+		var mensaje = $("#mensaje").hide();
+		var imagen = $("#imagen").hide();
+		var katamary = $("#katamary").hide();
+		
+		var intentos = 0;
+		
+		$("#boton").click(onChange);
+		$("#katamary").click(onKatamary);
+		
+		function onChange()
+		{
+			intentos++;
+			if(input.val() == 4 && intentos == 1)
+				show(items[0]);
+			else
+				show(items[(intentos % (items.length - 1)) + 1]);
+			
+			if(intentos >= 9)
+				katamary.show();
+			
+			$("*").append("<span>! </span>")
+		}
+		
+		function show(item)
+		{
+			if(item.length < 50)
+			{
+				mensaje.text(item)
+					   .show();
+				imagen.hide();
+			}
+			else
+			{
+				mensaje.hide();
+				imagen.attr("src", item)
+					  .show();
+			}
+		}
+		function onKatamary()
+		{
+			var i,s,ss=['http://kathack.com/js/kh.js','http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'];for(i=0;i!=ss.length;i++){s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);
+		}
+	});
+	
+	</script>
+	
 </body>
 </html>
