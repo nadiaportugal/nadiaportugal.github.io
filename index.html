@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Felicidades</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
@@ -22,7 +23,7 @@
 			</div>	
 		</div>
 	</div>
-	<div class="row greetings" style="height: 100%">
+	<div class="row greetings js-greetings" style="height: 100%">
 		<div class="col-sm-4">
 			<div class="panel panel-default">
 				<div class="panel-heading">Nombre</div>
@@ -75,11 +76,16 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-4 js-nico3">
 			<div class="panel panel-default">
 				<div class="panel-heading">Nico3</div>
 				<div class="panel-body">
-					<p>Felicidades!</p>
+					<a href="javascript:void(0);" class="js-pisculichi">
+						<img src="http://tn.com.ar/sites/default/files/2014/11/28/pisculichi_gol_a_boca.jpg" class="pisculichi"/>
+					</a>
+					<p>Santa! Muchas felicidades en esta nueva etapa de tu vida. Nunca olvides que las metas complicadas y laboriosas son las que más se disfrutan....como el gol de Piscu a Boca(?)</p>
+					<p>PD: no me gusta mandar a la gente al frente...pero si clickeas en el Enter de Galu se rompe el html</p>
+					<p>PD2: Por que soy nico3 también en este grupo?</p>
 				</div>
 			</div>
 		</div>
@@ -101,6 +107,7 @@
 		</div>
 	</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="pisculichi.js"></script>
 	<script>
 		(function() {
 			var greetingsRow = $(".row.greetings");
