@@ -248,7 +248,6 @@
 		$('#nolaviapato').click(function(){
 			mainNyan();
 			setTimeout(function(){
-				debugger;
 				$('<canvas id="canvasRegn" style="position: absolute; left:0; top: 0" z-index=2000;" width="'+$(document).width()+'" height="'+$(document).height()+'"></canvas>').appendTo('body');
 				var s = document.createElement('script');s.src='milk.js';document.body.appendChild(s);void(0);
 			}, 11000);

@@ -101,7 +101,7 @@
 													'width': $(grid[j][q][i]).width(),
 													'height': $(grid[j][q][i]).height()
 												});
-								$('div.greetings').append(elemCopy);
+								$('body').append(elemCopy);
 								grid[j][q][i].style.visibility = 'hidden';
 								grid[j][q].splice(i,i+1);
 								$(elemCopy).animate({
@@ -236,7 +236,7 @@ function StickyNodes() {
 					{
 						duration: 300,
 						step: function (now, fx) {
-							gridObj.checkCollision($('#nyan').offset(), $('#nyan').width(), $('#nyan').height() );
+							gridObj.checkCollision($('#nyan').offset(), $('#nyan').width(), $('#nyan').height());
 						},
 						complete: function() {
 							previousPoint = currentPoint;
@@ -367,7 +367,8 @@ function mainNyan() {
         	}
 
 		setTimeout(function(){
-			$("<div id='nyan' style='left:15px; bottom:-500px; position: absolute;z-index=1000;'></div>").appendTo("div.greetings");
+			// $("<div id='nyan' style='left:15px; bottom:-" + ($("div.greetings").height())+"px; position: absolute;z-index=1000;'></div>").appendTo("div.greetings");
+			$("<div id='nyan' style='left:15px; bottom:-"+(document.getElementsByClassName('greetings')[0].scrollHeight+300)+"px; position: absolute;z-index=1000;'></div>").appendTo("div.greetings");
 
 			$('<img />', {
 				id: 'nyan-cat',
@@ -379,7 +380,7 @@ function mainNyan() {
 			});
 			addMouseMovement();
 			addKeyboardMovement();
-		}, 3000);
+		}, 2000);
 		
 		var bgmusic = document.createElement('audio');
 		bgmusic.id = 'nyanmusic';
